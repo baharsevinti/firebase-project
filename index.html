@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Firebase Firestore Test</title>
+</head>
+<body>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyC4JKwEGZOKL6FraTTB6P7HKC1W03ww5Zc",
+      authDomain: "modern-js-80a62.firebaseapp.com",
+      projectId: "modern-js-80a62",
+      storageBucket: "modern-js-80a62.appspot.com", // düzeltildi
+      messagingSenderId: "346108360009",
+      appId: "1:346108360009:web:d00dce8ed05e33f2dc5698"
+    };
+
+    // Firebase başlat
+    firebase.initializeApp(firebaseConfig);
+
+    // Firestore referansı
+    const db = firebase.firestore();
+
+    
+  </script>
+<script type="module" src="script.js"></script>
+</body>
+</html>
