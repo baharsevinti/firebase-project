@@ -3,6 +3,8 @@ import {
   getFirestore,
   collection,
   addDoc,
+  deleteDoc,
+  doc,
   Timestamp
 } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
 
@@ -42,4 +44,21 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Ekleme hatası:", error);
     }
   });
+  if (deleteBtn) {
+    deleteBtn.addEventListener("click", async () => {
+      const belgeId = prompt("Silmek istediğiniz belge ID'sini girin:");
+
+      if (!belgeId) {
+        console.warn("Belge ID girilmedi.");
+        return;
+      }
+
+      try {
+        await deleteDoc(doc(db, "haberler", belgeId));
+        console.log("Belge silindi:", belgeId);
+      } catch (error) {
+        console.error("Silme hatası:", error);
+      }
+    });
+  }
 });
